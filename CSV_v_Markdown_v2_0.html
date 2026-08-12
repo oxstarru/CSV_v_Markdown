@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSV в Markdown</title>
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,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">
+<!-- Автономная утилита: внешних запросов нет, шрифты системные. -->
+<style>
+:root{
+  --bg:#F4EFE6; --card:#FBF7EE; --input:#FFFFFF; --text:#2C2826; --muted:#786C5E;
+  --accent:#B85540; --accent-tint:#F0E5D0; --border:#D4C9B8; --border-soft:#E8DDC9; --success:#5C7A4F;
+  --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --mono:ui-monospace,Menlo,Consolas,"Courier New",monospace;
+}
+*{box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);margin:0;padding:32px 20px;display:flex;justify-content:center;line-height:1.55;}
+.container{max-width:900px;width:100%;background:var(--card);padding:34px 34px 22px;border:1px solid var(--border);border-radius:14px;box-shadow:0 6px 26px rgba(90,70,40,.07);}
+.head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;}
+.num{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.05em;white-space:nowrap;padding-top:6px;}
+h1{font-family:var(--serif);font-size:28px;margin:0 0 4px;font-weight:600;letter-spacing:.2px;}
+.subtitle{color:var(--muted);margin:0;font-size:15px;}
+.divider{border:none;border-top:1px dashed var(--border);margin:22px 0;}
+.upload-area{border:2px dashed var(--border);border-radius:12px;padding:28px 20px;text-align:center;cursor:pointer;transition:.2s;background:var(--input);margin-bottom:18px;}
+.upload-area:hover,.upload-area.dragover{border-color:var(--accent);background:var(--accent-tint);}
+.upload-area p{margin:0 0 12px;}
+.upload-area .hint{font-size:13px;color:var(--muted);}
+.upload-area input[type="file"]{display:none;}
+.btn{background:var(--accent);color:#fff;border:none;padding:9px 20px;border-radius:9px;font-size:14px;font-family:var(--sans);cursor:pointer;transition:.15s;}
+.btn:hover{filter:brightness(.94);}
+.btn-secondary{background:var(--accent-tint);color:var(--accent);}
+.btn-secondary:hover{background:#E8DBC4;}
+.flex{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:10px 0 20px;}
+.flex label{font-size:14px;color:var(--muted);}
+.flex input[type="checkbox"]{accent-color:var(--accent);}
+.flex input[type="text"]{border:1px solid var(--border);border-radius:6px;padding:3px 6px;font-family:var(--mono);background:var(--input);color:var(--text);}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin:12px 0;}
+.stats{font-size:14px;color:var(--muted);margin-top:8px;}
+textarea{width:100%;min-height:250px;font-family:var(--mono);font-size:14px;padding:14px;border:1px solid var(--border-soft);border-radius:10px;resize:vertical;background:var(--input);color:var(--text);white-space:pre;}
+textarea:focus{outline:2px solid var(--accent);outline-offset:1px;}
+.preview{background:var(--input);padding:12px;border-radius:10px;font-size:13px;font-family:var(--mono);white-space:pre-wrap;max-height:200px;overflow:auto;margin-top:12px;border:1px solid var(--border-soft);}
+.info{background:var(--accent-tint);border-left:4px solid var(--accent);padding:11px 16px;border-radius:8px;font-size:14px;color:#5e4327;margin:20px 0 0;}
+.info strong{color:var(--accent);}
+.info code{font-family:var(--mono);background:rgba(184,85,64,.12);padding:1px 5px;border-radius:4px;}
+.footer{margin-top:22px;padding-top:16px;border-top:1px dashed var(--border);font-family:var(--mono);font-size:12px;color:var(--muted);text-align:center;line-height:1.9;letter-spacing:.02em;}
+.footer a{color:var(--accent);text-decoration:none;}
+.footer a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="head">
+    <div>
+      <h1>CSV в Markdown</h1>
+      <p class="subtitle">Загрузи CSV — получи Markdown-таблицу для вставки в базу знаний. Всё локально, без интернета.</p>
+    </div>
+    <div class="num">№ 04</div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="upload-area" id="dropZone">
+    <p>Перетащите CSV-файл сюда<br><span class="hint">или кликните, чтобы выбрать</span></p>
+    <input type="file" id="fileInput" accept=".csv,.tsv,.txt">
+    <button class="btn" id="browseBtn">Выбрать файл</button>
+  </div>
+
+  <div class="flex">
+    <label><input type="checkbox" id="trimSpaces" checked> Удалять лишние пробелы</label>
+    <label><input type="checkbox" id="detectSeparator" checked> Автоопределение разделителя</label>
+    <label style="margin-left:auto;">Разделитель (если авто отключён):
+      <input type="text" id="customSeparator" value="," style="width:40px; text-align:center;"></label>
+  </div>
+
+  <div class="row">
+    <button class="btn" id="convertBtn">Преобразовать</button>
+    <button class="btn btn-secondary" id="copyBtn">Копировать</button>
+    <button class="btn btn-secondary" id="downloadBtn">Скачать .md</button>
+    <button class="btn btn-secondary" id="clearBtn">Очистить</button>
+  </div>
+
+  <div id="stats" class="stats">Файл не загружен</div>
+
+  <textarea id="output" placeholder="Здесь появится Markdown-таблица..."></textarea>
+
+  <div id="previewContainer" style="display:none;">
+    <div style="margin-top:16px; display:flex; justify-content:space-between; align-items:center;">
+      <span style="font-weight:600; font-size:15px;">Предпросмотр CSV (первые 10 строк)</span>
+      <span id="previewStats" style="font-size:13px; color:var(--muted);"></span>
+    </div>
+    <div class="preview" id="preview"></div>
+  </div>
+
+  <div class="info">
+    <strong>Совет:</strong> Если таблица сломалась, отключите «Автоопределение разделителя» и укажите правильный вручную (запятая <code>,</code>, точка с запятой <code>;</code> или табуляция <code>\t</code>).
+  </div>
+
+  <div class="footer">
+    <div>Идея — Оксана Старкова, вайб-код — ИИ1-2, ИИ10, ИИ10-2 · версия 2.0 · <a href="https://dreamlifewithai.ru/blog/utility/utility-dlya-sistemnogo-analitika/csv-v-markdown/" target="_blank" rel="noopener">обновления и подробности</a></div>
+    <div>Утилита разработана в рамках проекта <a href="https://dreamlifewithai.ru/" target="_blank" rel="noopener">СоТворяя Жизнь Мечты с ИИ</a></div>
+  </div>
+</div>
+
+<script>
+(function() {
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        const browseBtn = document.getElementById('browseBtn');
+        const convertBtn = document.getElementById('convertBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const output = document.getElementById('output');
+        const stats = document.getElementById('stats');
+        const previewContainer = document.getElementById('previewContainer');
+        const preview = document.getElementById('preview');
+        const previewStats = document.getElementById('previewStats');
+
+        const trimSpacesChk = document.getElementById('trimSpaces');
+        const detectSepChk = document.getElementById('detectSeparator');
+        const customSepInput = document.getElementById('customSeparator');
+
+        let currentCSV = '';
+        let currentRows = [];
+        let currentName = '';
+
+        // --- Drag & Drop ---
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('dragover');
+        });
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                handleFile(files[0]);
+            }
+        });
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        browseBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length > 0) {
+                handleFile(fileInput.files[0]);
+            }
+        });
+
+        // --- Обработка файла ---
+        function handleFile(file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                let text = e.target.result;
+                // Удаляем BOM если есть
+                if (text.charCodeAt(0) === 0xFEFF) {
+                    text = text.substring(1);
+                }
+                currentCSV = text;
+                currentName = file.name;
+                stats.textContent = `Файл: ${file.name} (${(file.size / 1024).toFixed(1)} КБ)`;
+                // Автоматически конвертируем
+                convertCSV();
+            };
+            reader.readAsText(file, 'UTF-8');
+        }
+
+/* ===== Общий разбор таблиц: Excel (.xlsx) и CSV =====
+   Единый блок для утилит № 1, № 3, № 4, № 7 — правится в одном месте
+   и раскладывается по всем. Наружу отдаёт три функции:
+     tbl_detectDelim(text)     — разделитель CSV
+     tbl_parseCsv(text, delim) — CSV → массив строк (массивов ячеек)
+     tbl_parseXlsx(buffer)     — первый лист .xlsx → массив строк
+   Ниже — совместимые имена parseCsvArrays / parseXlsxArrays.
+   Версия блока: 2 (08.08.2026)                                        */
+
+function tbl_decodeXml(s){
+  return String(s).replace(/&lt;/g,'<').replace(/&gt;/g,'>')
+    .replace(/&quot;/g,'"').replace(/&apos;/g,"'")
+    .replace(/&#(\d+);/g,function(m,d){return String.fromCharCode(parseInt(d,10));})
+    .replace(/&amp;/g,'&');
+}
+function tbl_colToIndex(ref){
+  if(!ref) return 0;
+  var n=0, s=String(ref).replace(/[0-9]+/g,'').toUpperCase();
+  for(var i=0;i<s.length;i++) n=n*26+(s.charCodeAt(i)-64);
+  return n-1;
+}
+
+/* --- CSV --- */
+
+// Считает разделители вне кавычек: запятая внутри значения не должна перевешивать
+function tbl_countOutside(line,sep){
+  var n=0,q=false;
+  for(var i=0;i<line.length;i++){
+    var ch=line[i];
+    if(ch==='"'){ q=!q; continue; }
+    if(!q && ch===sep) n++;
+  }
+  return n;
+}
+// Разделитель выбираем по стабильности числа колонок, а не по «кого больше»
+function tbl_detectDelim(text){
+  var lines=String(text).replace(/^\uFEFF/,'').split(/\r\n|\n|\r/)
+    .filter(function(l){return l.trim().length>0;}).slice(0,20);
+  if(!lines.length) return ',';
+  var seps=[',',';','\t','|'], best=',', bestScore=-1;
+  seps.forEach(function(sep){
+    var counts=lines.map(function(l){return tbl_countOutside(l,sep);});
+    if(counts[0]===0) return;                       // в шапке этого разделителя нет
+    var same=counts.filter(function(c){return c===counts[0];}).length/counts.length;
+    var score=same*100+counts[0];
+    if(score>bestScore){ bestScore=score; best=sep; }
+  });
+  return best;
+}
+function tbl_parseCsv(text,delim){
+  text=String(text).replace(/^\uFEFF/,'');
+  if(delim==null) delim=tbl_detectDelim(text);
+  if(delim==='\\t') delim='\t';
+  var raw=text.split(/\r\n|\n|\r/);
+  // значение в кавычках может занимать несколько строк файла — склеиваем,
+  // пока кавычки не закрыты (их чётное число)
+  var lines=[], buf='';
+  for(var li=0;li<raw.length;li++){
+    buf = buf==='' ? raw[li] : buf+'\n'+raw[li];
+    if(((buf.match(/"/g)||[]).length)%2===0){ lines.push(buf); buf=''; }
+  }
+  if(buf!=='') lines.push(buf);
+
+  function splitLine(line){
+    var out=[],cur='',q=false;
+    for(var k=0;k<line.length;k++){
+      var ch=line[k];
+      if(q){
+        if(ch==='"'){ if(line[k+1]==='"'){ cur+='"'; k++; } else q=false; }
+        else cur+=ch;
+      } else {
+        if(ch==='"') q=true;
+        else if(ch===delim){ out.push(cur); cur=''; }
+        else cur+=ch;
+      }
+    }
+    out.push(cur);
+    return out;
+  }
+  var rows=[];
+  for(var r=0;r<lines.length;r++){
+    if(lines[r].trim()==='' && r>0) continue;
+    rows.push(splitLine(lines[r]));
+  }
+  while(rows.length && rows[rows.length-1].every(function(c){return String(c).trim()==='';})) rows.pop();
+  return rows;
+}
+
+/* --- XLSX --- */
+
+function tbl_sharedStrings(xml){
+  var out=[], re=/<si>([\s\S]*?)<\/si>/g, m;
+  while((m=re.exec(xml))!==null){
+    var s='', tre=/<t[^>]*>([\s\S]*?)<\/t>/g, tm;
+    while((tm=tre.exec(m[1]))!==null) s+=tbl_decodeXml(tm[1]);
+    out.push(s);
+  }
+  return out;
+}
+function tbl_sheetToRows(xml,shared){
+  var rows=[], rowRe=/<row\b[^>]*(?:\/>|>([\s\S]*?)<\/row>)/g, rm;
+  while((rm=rowRe.exec(xml))!==null){
+    var inner=rm[1]||'';                       // пустая строка листа: <row .../>
+    var cells=[], cRe=/<c\s+([^>]*?)(?:\/>|>([\s\S]*?)<\/c>)/g, cm;
+    while((cm=cRe.exec(inner))!==null){
+      var attrs=cm[1], body=cm[2]||'';
+      var ref=(attrs.match(/r="([A-Z]+)\d+"/)||[])[1];
+      var t=(attrs.match(/t="([^"]+)"/)||[])[1];
+      var val='';
+      var vM=body.match(/<v>([\s\S]*?)<\/v>/);
+      var isM=body.match(/<t[^>]*>([\s\S]*?)<\/t>/);
+      if(t==='s'&&vM) val=shared[parseInt(vM[1],10)]||'';
+      else if((t==='inlineStr'||t==='str')&&isM) val=tbl_decodeXml(isM[1]);
+      else if(t==='str'&&vM) val=tbl_decodeXml(vM[1]);
+      else if(vM) val=tbl_decodeXml(vM[1]);
+      cells[tbl_colToIndex(ref)]=val;
+    }
+    for(var i=0;i<cells.length;i++) if(cells[i]===undefined) cells[i]='';
+    rows.push(cells);
+  }
+  return rows;
+}
+// Первый лист берём по порядку из книги, а не по имени файла:
+// сортировка по имени даёт sheet10 раньше sheet2 и может взять не тот лист
+async function tbl_firstSheetPath(zip){
+  try{
+    var wb=zip.file('xl/workbook.xml'), rel=zip.file('xl/_rels/workbook.xml.rels');
+    if(wb&&rel){
+      var wbXml=await wb.async('string'), relXml=await rel.async('string');
+      var first=wbXml.match(/<sheet\b[^>]*\/?>/);
+      if(first){
+        var rid=(first[0].match(/r:id="([^"]+)"/)||[])[1];
+        if(rid){
+          var re=new RegExp('<Relationship[^>]*Id="'+rid+'"[^>]*>'), rm=relXml.match(re);
+          if(rm){
+            var target=(rm[0].match(/Target="([^"]+)"/)||[])[1];
+            if(target){
+              target=target.replace(/^\/xl\//,'').replace(/^\.\//,'');
+              var path=target.indexOf('xl/')===0?target:'xl/'+target;
+              if(zip.file(path)) return path;
+            }
+          }
+        }
+      }
+    }
+  }catch(e){ /* упадём на запасной путь */ }
+  var names=Object.keys(zip.files).filter(function(n){return /^xl\/worksheets\/sheet\d+\.xml$/.test(n);})
+    .sort(function(a,b){
+      var na=parseInt((a.match(/sheet(\d+)/)||[,0])[1],10);
+      var nb=parseInt((b.match(/sheet(\d+)/)||[,0])[1],10);
+      return na-nb;
+    });
+  return names[0]||null;
+}
+async function tbl_parseXlsx(buf){
+  var zip=await JSZip.loadAsync(buf);
+  var shared=[];
+  var ss=zip.file('xl/sharedStrings.xml');
+  if(ss) shared=tbl_sharedStrings(await ss.async('string'));
+  var path=await tbl_firstSheetPath(zip);
+  if(!path) throw new Error('лист не найден в xlsx');
+  return tbl_sheetToRows(await zip.file(path).async('string'), shared);
+}
+
+/* Совместимые имена, которыми пользуются утилиты */
+function parseCsvArrays(text){ return tbl_parseCsv(text); }
+async function parseXlsxArrays(buf){ return await tbl_parseXlsx(buf); }
+
+        // --- Определение разделителя ---
+        function detectSeparator(csvText) {
+            if (!detectSepChk.checked) {
+                const sep = customSeparatorInput();
+                return sep;
+            }
+            return tbl_detectDelim(csvText);
+        }
+        function customSeparatorInput(){
+            const sep = customSepInput.value;
+            return sep === '\\t' ? '\t' : (sep || ',');
+        }
+
+        // --- Разбор CSV (общий блок выше) ---
+        function parseCSV(csvText, separator) {
+            return tbl_parseCsv(csvText, separator);
+        }
+
+        // --- Экранирование "|" и переносов внутри ячейки для корректной Markdown-таблицы ---
+        function mdCell(s) {
+            return String(s).replace(/\\/g, '\\\\').replace(/\|/g, '\\|').replace(/\r?\n/g, '<br>');
+        }
+
+        // --- Преобразование в Markdown ---
+        function toMarkdown(rows, trimSpaces) {
+            if (!rows || rows.length === 0) return '';
+
+            let data = rows.map(row => row.map(cell => trimSpaces ? cell.trim() : cell));
+
+            const colCount = data.reduce((max, row) => Math.max(max, row.length), 0);
+            data = data.map(row => {
+                while (row.length < colCount) row.push('');
+                return row;
+            });
+
+            const header = data[0];
+            const body = data.slice(1);
+
+            let md = '| ' + header.map(mdCell).join(' | ') + ' |\n';
+            md += '|' + header.map(() => ' --- ').join('|') + '|\n';
+            for (const row of body) {
+                md += '| ' + row.map(mdCell).join(' | ') + ' |\n';
+            }
+            return md;
+        }
+
+        // --- Основная функция преобразования ---
+        function convertCSV() {
+            if (!currentCSV) {
+                output.value = '';
+                stats.textContent = 'Файл не загружен';
+                previewContainer.style.display = 'none';
+                return;
+            }
+
+            const sep = detectSeparator(currentCSV);
+            const rows = parseCSV(currentCSV, sep);
+
+            if (rows.length === 0) {
+                output.value = 'Не удалось распарсить CSV. Проверьте разделитель.';
+                stats.textContent = 'Ошибка парсинга';
+                previewContainer.style.display = 'none';
+                return;
+            }
+
+            currentRows = rows;
+            const trim = trimSpacesChk.checked;
+            const md = toMarkdown(rows, trim);
+            output.value = md;
+
+            const colCount = rows.reduce((max, r) => Math.max(max, r.length), 0);
+            stats.textContent = (currentName ? `${currentName} — ` : '') +
+                `${rows.length - 1} строк данных, ${colCount} колонок. Разделитель: ${sep === '\t' ? 'табуляция' : sep}`;
+
+            const previewRows = rows.slice(0, 11);
+            let previewText = '';
+            for (let i = 0; i < previewRows.length; i++) {
+                previewText += previewRows[i].join(' | ') + '\n';
+            }
+            preview.textContent = previewText;
+            previewStats.textContent = `${Math.min(rows.length, 11)} показано из ${rows.length}`;
+            previewContainer.style.display = 'block';
+        }
+
+        // --- Кнопки ---
+        convertBtn.addEventListener('click', convertCSV);
+
+        copyBtn.addEventListener('click', () => {
+            const text = output.value;
+            if (!text) return;
+            navigator.clipboard.writeText(text).then(() => {
+                stats.textContent = 'Markdown скопирован в буфер обмена.';
+            }).catch(() => {
+                output.select();
+                document.execCommand('copy');
+                stats.textContent = 'Скопировано.';
+            });
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            const text = output.value;
+            if (!text) return;
+            const blob = new Blob([text], { type: 'text/markdown' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = (currentName ? currentName.replace(/\.(csv|tsv|txt)$/i, '') : 'таблица') + '.md';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
+        clearBtn.addEventListener('click', () => {
+            currentCSV = '';
+            currentRows = [];
+            currentName = '';
+            output.value = '';
+            stats.textContent = 'Очищено';
+            previewContainer.style.display = 'none';
+            fileInput.value = '';
+        });
+
+        // Инициализация
+        stats.textContent = 'Готов к работе';
+    })();
+</script>
+</body>
+</html>
